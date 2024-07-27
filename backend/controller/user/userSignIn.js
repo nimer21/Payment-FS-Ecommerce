@@ -32,7 +32,8 @@ async function userSignInController(req, res) {
     const tokenOption = {
         expires: new Date(Date.now() + 3600000), // 1 hour
         httpOnly: true,
-        secure: true
+        secure: true,
+        sameSite: 'None'
     }
     res.cookie("token",token,tokenOption).status(200).json({
       message: "User signed in successfully",

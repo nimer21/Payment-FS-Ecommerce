@@ -1,6 +1,13 @@
 async function userLogoutController(req, res, next) {
     try {
-        res.clearCookie("token");   // clear cookies
+        const tokenOption = {
+            expires: new Date(Date.now() + 3600000), // 1 hour
+            httpOnly: true,
+            secure: true,
+            sameSite: 'None'
+        }
+
+        res.clearCookie("token",tokenOption);   // clear cookies
 
         //req.session.destroy();  // destroy session
         //req.logout();
