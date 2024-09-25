@@ -1,7 +1,7 @@
 const displayINRCurrency = (num) => {
-    const formatter = new Intl.NumberFormat('en-IN',{
+    const formatter = new Intl.NumberFormat('de-DE',{
         style: 'currency',
-        currency: 'INR',
+        currency: 'EUR',
         minimumFractionDigits: 2,
         maximumFractionDigits: 2
     });
